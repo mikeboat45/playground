@@ -1,0 +1,63 @@
+@font-face {
+  font-family: "casio-font";
+  src: url("./digital-7-italic.ttf") format("truetype");
+}
+
+.casio-display {
+  font-family: "DSEG7-Classic", sans-serif;
+  padding: 10px;
+  font-weight: bold;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#container {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+  border-radius: 5px;
+  background-color: #1d3557;
+  width: 60%;
+}
+
+.home,
+.guest {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  color: white;
+  font-weight: 800;
+  font-family: Arial;
+  font-size: 1.5rem;
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+.score {
+  padding: 50px 60px;
+  background-color: black;
+  margin-bottom: 7px;
+  border-radius: 3px;
+  font-family: "casio-font", sans-serif;
+}
+
+.point-ctr-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.point-ctr {
+  border: 1px solid white;
+  border-radius: 3px;
+  padding: 5px;
+  align-items: center;
+  color: white;
+  font-family: "casio-font", sans-serif;
+}
