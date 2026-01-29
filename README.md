@@ -1,2 +1,2 @@
 # My Playground
-This repo is dedicated to fun personal projects I work on and want to share
+A collection of small, fun personal projects and projects built from tutorials.
