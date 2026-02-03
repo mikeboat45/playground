@@ -47,6 +47,9 @@ add3Btn.addEventListener("click", () => {
 const resetBtn = document.getElementById("reset-btn");
 
 resetBtn.addEventListener("click", () => {
+  currentHomeScore = 0;
+  currentGuestScore = 0;
+
   displayHomeScore.textContent = 0;
   displayGuestScore.textContent = 0;
 });
