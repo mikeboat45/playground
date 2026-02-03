@@ -42,3 +42,11 @@ add3Btn.addEventListener("click", () => {
   currentGuestScore = currentGuestScore + 3;
   displayGuestScore.textContent = currentGuestScore;
 });
+
+// reset scores for new game
+const resetBtn = document.getElementById("reset-btn");
+
+resetBtn.addEventListener("click", () => {
+  displayHomeScore.textContent = 0;
+  displayGuestScore.textContent = 0;
+});
