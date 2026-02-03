@@ -4,28 +4,32 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Basketball Scoreboard</title>
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <!-- <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" /> -->
     <link rel="stylesheet" href="ball.css" />
   </head>
   <body>
     <div id="container">
       <div id="home">
-        <p class="title">HOME</p>
-        <div class="score"></div>
+        <p class="title">&nbsp;HOME&nbsp;</p>
+        <div class="score">
+          <p id="home-score"></p>
+        </div>
         <div class="point-ctr-container">
-          <p class="point-ctr">+ 1</p>
-          <p class="point-ctr">+ 2</p>
-          <p class="point-ctr">+ 3</p>
+          <button class="point-ctr" onclick="add1Point()">+ 1&nbsp;</button>
+          <button class="point-ctr" onclick="add2Point()">+ 2</button>
+          <button class="point-ctr" onclick="add3Point()">+ 3</button>
         </div>
       </div>
 
       <div id="guest">
         <p class="title">GUEST</p>
-        <div class="score"></div>
+        <div class="score">
+          <p id="guest-score">0</p>
+        </div>
         <div class="point-ctr-container">
-          <p class="point-ctr">+ 1</p>
-          <p class="point-ctr">+ 2</p>
-          <p class="point-ctr">+ 3</p>
+          <button class="point-ctr 1-point" id="1-point">+ 1&nbsp;</button>
+          <button class="point-ctr 2-point" id="2-point">+ 2</button>
+          <button class="point-ctr 3-point" id="3-point">+ 3</button>
         </div>
       </div>
     </div>
