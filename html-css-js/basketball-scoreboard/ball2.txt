@@ -1,0 +1,86 @@
+// =======================
+// STATE
+// =======================
+let currentHomeScore = 0;
+let currentGuestScore = 0;
+
+// =======================
+// DOM ELEMENTS
+// =======================
+const displayHomeScore = document.getElementById("home-score");
+const displayGuestScore = document.getElementById("guest-score");
+
+const homeButtons = document.querySelectorAll("[data-home]");
+const guestButtons = document.querySelectorAll("[data-guest]");
+
+const resetBtn = document.getElementById("reset-btn");
+
+// =======================
+// INITIAL RENDER
+// =======================
+renderScores();
+updateLeader();
+
+// =======================
+// FUNCTIONS
+// =======================
+
+function renderScores() {
+  displayHomeScore.textContent = currentHomeScore;
+  displayGuestScore.textContent = currentGuestScore;
+}
+
+function updateLeader() {
+  displayHomeScore.classList.remove("leading");
+  displayGuestScore.classList.remove("leading");
+
+  if (currentHomeScore > currentGuestScore) {
+    displayHomeScore.classList.add("leading");
+  } else if (currentGuestScore > currentHomeScore) {
+    displayGuestScore.classList.add("leading");
+  }
+  // tie → no leader
+}
+
+function updateScore(team, points) {
+  if (team === "home") {
+    currentHomeScore += points;
+  } else if (team === "guest") {
+    currentGuestScore += points;
+  }
+
+  renderScores();
+  updateLeader();
+}
+
+function resetGame() {
+  currentHomeScore = 0;
+  currentGuestScore = 0;
+
+  renderScores();
+  updateLeader();
+}
+
+// =======================
+// EVENT LISTENERS
+// =======================
+
+// Home team buttons
+homeButtons.forEach(button => {
+  button.addEventListener("click", () => {
+    const points = Number(button.dataset.home);
+    updateScore("home", points);
+  });
+});
+
+// Guest team buttons
+guestButtons.forEach(button => {
+  button.addEventListener("click", () => {
+    const points = Number(button.dataset.guest);
+    updateScore("guest", points);
+  });
+});
+
+// Reset button
+resetBtn.addEventListener("click", resetGame);
+
